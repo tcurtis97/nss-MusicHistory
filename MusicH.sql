@@ -78,21 +78,24 @@ or a.ArtistName = 'Beatles'
 
 
 --display how many songs for each album
-SELECT COUNT(Song.Id)
-FROM Song
-GROUP BY song.AlbumId
+SELECT COUNT(s.Id), al.Title
+FROM Song s
+left join Album al on s.AlbumId = al.Id
+GROUP BY al.Title
 
 
 --display how many songs for each artist
-SELECT COUNT(Song.Id)
-FROM Song
-GROUP BY Song.ArtistId
+SELECT COUNT(s.Id), ar.ArtistName
+FROM Song s
+left join Artist ar on s.ArtistId = ar.Id
+GROUP BY ar.ArtistName
 
 
 --display how many songs for each genre
-SELECT COUNT(Song.Id)
-FROM Song
-GROUP BY Song.GenreId
+SELECT COUNT(s.Id), g.Label
+FROM Song s
+left join Genre g on s.GenreId = g.Id
+GROUP BY g.Label
 
 --Write a SELECT query that lists the Artists that have put out records on more than one record label. Hint: When using GROUP BY instead of using a WHERE clause, use the HAVING keyword
 SELECT a.ArtistName
