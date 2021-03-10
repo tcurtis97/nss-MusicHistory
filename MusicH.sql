@@ -74,7 +74,7 @@ LEFT JOIN Album al ON s.AlbumId = al.Id
 LEFT JOIN Artist a ON al.ArtistId = a.Id
 WHERE s.Title = 'TV PARTY'
 or s.Title = 'Thug'
-or ar.ArtistName = 'Beatles'
+or a.ArtistName = 'Beatles'
 
 
 --display how many songs for each album
