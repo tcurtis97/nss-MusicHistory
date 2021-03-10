@@ -36,11 +36,12 @@ ORDER BY ArtistName;
 
 
 --filter by artists with pop albums
-SELECT a.ArtistName
+SELECT a.ArtistName 
        
   FROM Album al
        LEFT JOIN Artist a on al.ArtistId = a.id
   WHERE al.GenreId = 4
+  GROUP BY  a.ArtistName
 
   
   
@@ -111,6 +112,10 @@ WHERE al.AlbumLength = (SELECT MAX(al.AlbumLength) FROM Album al)
 
 --Using MAX() function, write a select statement to find the song with the longest duration. The result should display the song title and the duration.
 SELECT s.Title, s.SongLength, al.Title
-FROM Song s LEFT JOIN Album al ON s.AlbumId = al.Id
+FROM Song s 
+LEFT JOIN Album al ON s.AlbumId = al.Id
 WHERE s.SongLength = (SELECT MAX(s.SongLength) FROM Song s)
 --selects max song length from song table
+
+--having = some condition on the group
+--group by = sets the stage for a function that you want to run over a group of soemthing
