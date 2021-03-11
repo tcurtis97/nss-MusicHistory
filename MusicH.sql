@@ -53,7 +53,7 @@ SELECT a.ArtistName
   WHERE al.GenreId = 2 OR al.GenreId = 4
 
 
-  --filter by artists with no songs
+  --filter by albums with no songs
   Select al.Title
 FROM Album al
     LEFT JOIN Song on Song.AlbumId = al.Id
