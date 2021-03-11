@@ -40,7 +40,7 @@ SELECT a.ArtistName
        
   FROM Album al
        LEFT JOIN Artist a on al.ArtistId = a.id
-  WHERE al.GenreId = 4
+  WHERE al.GenreId = 7
   GROUP BY  a.ArtistName
 
   
